@@ -1,0 +1,41 @@
+.burger
+  &--sm
+    display inline-block
+    padding-right 15px
+    position relative
+    z-index 1
+    padding side-padding-xs
+
+    img {
+      width 30px
+      height auto
+      display block
+    }
+
+    @media (max-width: screen-sm-max)
+      margin-left -15px
+    
+
+    i
+      color #000
+      font-size 25px
+      transition transform 0.5s ease-in-out
+      transform rotate(90deg)
+      position absolute
+      right 0px
+      bottom 21px
+      font-style normal
+      font-weight 600
+      line-height 22px
+      z-index 2
+    
+  
+
+
+.state--menu-open
+  .burger--sm
+    i
+      transform rotate(0deg)
+    
+  
+

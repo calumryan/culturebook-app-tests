@@ -1,12 +1,19 @@
 import React from 'react';
 
-const Header = (props) => {
-    return (
-        <header className="top">
-            <h1>Culturebook</h1>
-            <h2 className="tagline"><span>{props.tagline}</span></h2>
-        </header>
-    )
+class Header extends React.Component {
+
+    render(){
+        return (
+
+            <div>
+                <header id="header" className="header">
+                    <a href="/" role="button" className="link-reset burger--sm" id="js-menu-1">
+                        <img src="../images/culturebook-small.svg" alt="C" className="hero-logo" width="9" /> <i className="js-menu icon icon-chevron-small icon-chevron-down icon-black">&rsaquo;</i></a>
+                </header>
+            </div>
+
+        )
+    }
 }
 
 export default Header;

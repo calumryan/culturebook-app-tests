@@ -1,0 +1,47 @@
+.nav 
+  font-size 16px
+  @media (min-width: screen-sm-min) 
+    font-size 18px
+  
+
+  &-pills 
+    padding side-padding-xs*2 side-padding-xs
+    margin-bottom 0
+    li 
+      list-style none
+
+      a 
+        color #FFF
+        padding 5px 0
+        display block
+      
+    
+
+    hr 
+      border-color #FFF
+    
+  
+  &-profile 
+    border-bottom 1px solid border-light
+    button 
+      background-color transparent
+      border 0
+      border-bottom 2px solid transparent
+      padding 12px 5px
+      @media (min-width: screen-sm-min) 
+        padding 12px 10px
+      
+      font-weight 600
+
+      &.selected, &focus, &hover 
+        border-bottom 2px solid culturebook
+        color culturebook
+      
+
+      sup 
+        top -2px
+      
+    
+
+  
+
