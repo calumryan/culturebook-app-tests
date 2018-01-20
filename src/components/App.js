@@ -7,11 +7,15 @@ class App extends React.Component {
     render(){
         return (
             <div className="started">
-                <div className="menu-1">
-                    <Header tagline="Home" />
+
+                <Header tagline="Home" />
+                <div className="c-main">
+                    <section>
                     <a href="/profile/">Link to profile 🖼</a>
-                    <Footer />
+                    </section>
                 </div>
+                <Footer />
+
             </div>
             
         )

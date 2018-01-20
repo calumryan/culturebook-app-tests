@@ -7,6 +7,10 @@
   transition all 0.5s
   transform translate3d(-100%, 0px, 0px)
   background-color #373a47
+  background-repeat no-repeat
+  background-position 20px 15px
+  background-size 30px auto
+  background-image url(../images/culturebook-small-white.svg)
   top 0
 
   &-box 
@@ -46,8 +50,7 @@
     
 
 
-.body-state--open 
-  overflow hidden
+.hamburger-checkbox:checked ~
 
   .menu 
       transform translate3d(0, 0px, 0px)

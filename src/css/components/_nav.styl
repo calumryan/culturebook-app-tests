@@ -5,16 +5,25 @@
   
 
   &-pills 
-    padding side-padding-xs*2 side-padding-xs
+    padding side-padding-xs*5 side-padding-xs
     margin-bottom 0
     li 
       list-style none
 
       a 
         color #FFF
-        padding 5px 0
+        padding 8px 5px
         display block
-      
+        text-decoration none
+        border-bottom 1px dotted rgba(255, 255, 255, 0.5)
+
+        &:hover 
+          background-color culturebook
+          color #ffffff
+
+        &:focus 
+          background-color #000000
+          color #FFFFFF
     
 
     hr 
