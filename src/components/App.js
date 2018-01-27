@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import Featured from './Featured';
 
 class App extends React.Component {
 
@@ -14,6 +15,7 @@ class App extends React.Component {
                     <a href="/profile/">Link to profile 🖼</a>
                     </section>
                 </div>
+                <Featured />
                 <Footer />
 
             </div>
