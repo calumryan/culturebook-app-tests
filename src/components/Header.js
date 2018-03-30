@@ -12,9 +12,9 @@ class Header extends React.Component {
 
                     <input id="hamburger" type="checkbox" className="hamburger-checkbox" />
 
-                    <label className="js-menu icon icon-chevron-small icon-chevron-down icon-black hamburger-label" htmlFor="hamburger" role="button" aria-labelledby="menu">&rsaquo;</label>
+                    <label className="js-menu icon icon-chevron-small icon-chevron-down icon-black hamburger-label" htmlFor="hamburger" role="button" title="Menu toggle" aria-labelledby="menu">&rsaquo;</label>
 
-                    <nav role="navigation" className="menu">
+                    <nav id="menu" className="menu">
                         <ul className="nav nav-pills">
                             <li><a href="/">Home</a></li>
                             <li><a href="/profile">Profile</a></li>

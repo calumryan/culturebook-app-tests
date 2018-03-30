@@ -1,12 +1,15 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 class ExhibitSample extends React.Component {
+
+
     render() {
 
         const { details } = this.props;
 
         return (
-            <a href="/profile/" className="featured featured-medium">
+            <a onClick={this.props.openProfile} className="featured featured-medium" href={ `exhibit/${details.path}` }>
                 <div className="featured-container">
                     <div className="featured-image featured-medium-image" style={{ backgroundImage: `url(${details.image})` }}></div>
                     <div className="featured-info">
