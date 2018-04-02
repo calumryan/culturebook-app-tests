@@ -401,6 +401,16 @@ border0
   padding-right: 15px;
   max-width: 1200px;
 }
+.c-exhibit {
+  display: none;
+}
+.featured-exhibits--show .c-main {
+  display: none;
+  visibility: hidden;
+}
+.featured-exhibits--show .c-exhibit {
+  display: block;
+}
 .f-main {
   background-color: #b11f29;
   padding-top: 50px;

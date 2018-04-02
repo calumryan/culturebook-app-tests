@@ -14,7 +14,7 @@ class ProfileTabs extends React.Component {
                     </TabList>
 
                     <TabPanel>
-                        <h2>Any content 1</h2>
+                        <h2>{ this.props.sendSelection }</h2>
                     </TabPanel>
 
                     <TabPanel>

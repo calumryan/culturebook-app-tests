@@ -1,15 +1,32 @@
 import React from 'react';
-import PropTypes from "prop-types";
 
 class ExhibitSample extends React.Component {
 
+    loadExhibit(event) {
+        event.preventDefault();
+
+        // const exhibit = {
+        //     name: this.props.details.name,
+        //     museum: this.props.details.museum
+        // }
+
+        //console.log(exhibit.name);
+
+        const profileView = {
+            visible: true,
+            name: this.props.details.name
+        }
+
+        this.props.callbackFromExhibit( profileView );
+
+    }
 
     render() {
 
         const { details } = this.props;
 
         return (
-            <a onClick={this.props.openProfile} className="featured featured-medium" href={ `exhibit/${details.path}` }>
+            <a className="featured featured-medium" onClick={(e) => this.loadExhibit(e)} href={ `exhibit/${details.path}` }>
                 <div className="featured-container">
                     <div className="featured-image featured-medium-image" style={{ backgroundImage: `url(${details.image})` }}></div>
                     <div className="featured-info">

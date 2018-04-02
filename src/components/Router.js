@@ -8,7 +8,7 @@ import NotFound from './NotFound';
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/profile/:exhibitId" component={Profile} />
+        <Route path="/exhibit/:exhibitId" component={Profile} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

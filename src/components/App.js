@@ -1,46 +1,43 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import Featured from './Featured';
-import Profile from './Profile';
 import ExhibitSample from './ExhibitSample';
+import Profile from './Profile';
 import sampleExhibits from '../sample-exhibits';
 
 class App extends React.Component {
 
-    constructor() {
-        super();
-        // Bind function to 'this'
-        this.openProfile = this.openProfile.bind(this);
+    constructor(props) {
+        super(props);
+        this.state = {
+            storeStateFromExhibit: false
+        };
     }
 
     state = {
         exhibits: {}
     }
 
-    loadExhibit = (key) => {
-        console.log('Load profile');
+    exhibitIntoView = exhibit => {
 
-        // Copy state
-        const selection = { ...this.state.selection };
+        // 1. take a copy of the existing state
+        const exhibits = { ...this.state.exhibits };
 
-        // Add to or update selection
-        selection[key] = selection[key] +1 || 1;
+        // 2. add in exhibit
+        const timestamp = Date.now();
+        exhibits[`exhibit-${timestamp}`] = exhibit;
 
-        // Set state to update view
-        this.setState({ selection });
+        // 3. set the new exhibits object
+        this.setState({ exhibits: exhibits });
 
     }
 
-    openProfile = (event) => {
-        event.preventDefault();
+    callback = ( stateFromExhibit ) => {
 
-        // Find this object
-        const exhibitPathname = this;
-
-        // Router to page
-        console.log(exhibitPathname);
-        //this.props.history.push(`/exhibits/${exhibitPathname}`);
+        this.setState({
+            storeStateFromExhibit: stateFromExhibit.visible,
+            storeExhibitName: stateFromExhibit.name
+        });
 
     }
 
@@ -56,13 +53,7 @@ class App extends React.Component {
             <div className="started">
 
                 <Header tagline="Home" />
-                <div className="c-main">
-                    <section>
-                    <a href="/profile/">Link to profile 🖼</a>
-                    </section>
-                </div>
-
-                <div className="featured-exhibits">
+                <div className={"featured-exhibits " + (this.state.storeStateFromExhibit ? 'featured-exhibits--show' : 'featured-exhibits--hidden')}>
                     <div className="c-main">
                         <section>
                             <h3>Highlighted exhibits</h3>
@@ -70,13 +61,15 @@ class App extends React.Component {
                             {
                                 Object
                                 .keys(this.state.exhibits)
-                                .map(key => <ExhibitSample openProfile={this.openProfile} index={key} key={key} details={this.state.exhibits[key]} />)
+                                .map(key => <ExhibitSample callbackFromExhibit={this.callback} exhibitIntoView={this.exhibitIntoView} index={key} key={key} details={this.state.exhibits[key]} />)
                             }
                             </div>
                         </section>
                     </div>
+                    <div className="c-exhibit">
+                        <Profile sendSelection={this.state.storeExhibitName} />
+                    </div>
                  </div>
-                 <Profile />
                 <Footer />
 
             </div>
