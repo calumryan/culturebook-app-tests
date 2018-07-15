@@ -65,14 +65,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: #000;
-  cursor: pointer;
-  text-decoration: none;
   margin-bottom: 30px;
   background-color: transparent;
   padding: 0;
   border: 0;
   text-align: left;
+}
+.featured a {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
 }
 .featured h4 {
   margin-top: 10px;

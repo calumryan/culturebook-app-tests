@@ -2,8 +2,11 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import ExhibitSample from './ExhibitSample';
-import Profile from './Profile';
 import sampleExhibits from '../sample-exhibits';
+// import {
+//     BrowserRouter as Router,
+//     Link
+// } from 'react-router-dom'
 
 class App extends React.Component {
 
@@ -32,6 +35,11 @@ class App extends React.Component {
 
     }
 
+    // loadMe(event) {
+    //     event.preventDefault();
+    //     this.props.history.push('exhibit/e1');
+    // }
+
     callback = ( stateFromExhibit ) => {
 
         this.setState({
@@ -53,7 +61,8 @@ class App extends React.Component {
             <div className="started">
 
                 <Header tagline="Home" />
-                <div className={"featured-exhibits " + (this.state.storeStateFromExhibit ? 'featured-exhibits--show' : 'featured-exhibits--hidden')}>
+                {/* <Router><div><Link to={`exhibit/dfsdf` } onClick={(e) => this.loadMe(e)}>Exhibit</Link></div></Router> */}
+                <div className={"featured-exhibits"}>
                     <div className="c-main">
                         <section>
                             <h3>Highlighted exhibits</h3>
@@ -66,9 +75,9 @@ class App extends React.Component {
                             </div>
                         </section>
                     </div>
-                    <div className="c-exhibit">
+                    {/* <div className="c-exhibit">
                         <Profile sendSelection={this.state.storeExhibitName} />
-                    </div>
+                    </div> */}
                  </div>
                 <Footer />
 

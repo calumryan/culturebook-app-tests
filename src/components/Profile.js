@@ -1,14 +1,16 @@
 import React from 'react';
 import ProfileTabs from './ProfileTabs';
-// import Header from './Header';
-// import Footer from './Footer';
+import Header from './Header';
+import Footer from './Footer';
 
 class Profile extends React.Component {
+
+
 
     render() {
         return (
             <div>
-                {/* <Header tagline="Home" /> */}
+                <Header tagline="Home" />
                 <main>
                     <div className="container-fluid">
 
@@ -25,7 +27,7 @@ class Profile extends React.Component {
 
                     </div>
                 </main>
-                {/* <Footer /> */}
+                <Footer />
             </div>
         )
     }

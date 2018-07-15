@@ -1,6 +1,15 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Link
+} from 'react-router-dom'
+import PropTypes from "prop-types";
 
 class ExhibitSample extends React.Component {
+
+    static propTypes = {
+        history: PropTypes.object
+    }
 
     loadExhibit(event) {
         event.preventDefault();
@@ -10,14 +19,13 @@ class ExhibitSample extends React.Component {
         //     museum: this.props.details.museum
         // }
 
-        //console.log(exhibit.name);
-
         const profileView = {
             visible: true,
             name: this.props.details.name
         }
 
         this.props.callbackFromExhibit( profileView );
+        this.props.history.push(`/exhibit/`);
 
     }
 
@@ -26,16 +34,23 @@ class ExhibitSample extends React.Component {
         const { details } = this.props;
 
         return (
-            <a className="featured featured-medium" onClick={(e) => this.loadExhibit(e)} href={ `exhibit/${details.path}` }>
-                <div className="featured-container">
-                    <div className="featured-image featured-medium-image" style={{ backgroundImage: `url(${details.image})` }}></div>
-                    <div className="featured-info">
-                        <div className="featured-info-header">{ details.museum }</div>
-                        <h4>{ details.name }</h4>
-                        <p>{ details.desc }</p>
+            <Router>
+                <div className="featured featured-medium">
+                <Link  to={{
+                    pathname: `/exhibit/${details.path}`
+                }} onClick={(e) => this.loadExhibit(e)}>
+                    <div className="featured-container">
+                        <div className="featured-image featured-medium-image" style={{ backgroundImage: `url(${details.image})` }}></div>
+                        <div className="featured-info">
+                            <div className="featured-info-header">{ details.museum }</div>
+                            <h4>{ details.name }</h4>
+                            <p>{ details.desc }</p>
+                        </div>
                     </div>
+                </Link>
                 </div>
-            </a>
+            </Router>
+
         )
     }
 }
